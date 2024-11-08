@@ -20,6 +20,7 @@ class MenuActivity : AppCompatActivity() {
         }
         val btnSave = findViewById<Button>(R.id.btnSave)
         val btnSearch = findViewById<Button>(R.id.btnSearch)
+        val btnSharedPreferences = findViewById<Button>(R.id.btnSharedPreferences)
 
         btnSave.setOnClickListener{
             var intent = Intent(this, SaveActivity::class.java)
@@ -28,6 +29,11 @@ class MenuActivity : AppCompatActivity() {
 
         btnSearch.setOnClickListener{
             var intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnSharedPreferences.setOnClickListener{
+            var intent = Intent(this, SharedPreferencesActivity::class.java)
             startActivity(intent)
         }
     }

@@ -35,7 +35,7 @@ class MusicalGenreDAO(myContext: Context)  {
         val db = dbHelper.readableDatabase
         val modelo = MusicalGenre()
         try {
-            val c: Cursor = db.rawQuery("select id, titulo, descripcion from " + Tools.MYTABLE, null)
+            val c: Cursor = db.rawQuery("select id, title, description from " + Tools.MYTABLE, null)
             if (c.count > 0) {
                 c.moveToFirst()
                 do {
@@ -63,7 +63,7 @@ class MusicalGenreDAO(myContext: Context)  {
         val lista = ArrayList<MusicalGenre>()
         try {
             val c: Cursor = db.rawQuery(
-                "select id, titulo, descripcion from " + Tools.MYTABLE + " where titulo like '%$criterio%' or descripcion like '%$criterio%'",
+                "select id, title, description from " + Tools.MYTABLE + " where title like '%$criterio%' or description like '%$criterio%'",
                 null
             )
             if (c.count > 0) {
